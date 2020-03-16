@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yotube</title>
-    <link rel="stylesheet" href="YoutubeSearch.css" type="text/css">
-    <script src="YotubeSearch.js"></script>
+    <link rel="stylesheet" href="youtube_search.css" type="text/css">
+    <script src="yotube_search.js"></script>
+    <script src="page_navigation.js"></script>
+    <script src="youtube_page_request.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
-
 </head>
 
 <body>
+    <template id='mainPage'>
+        <main class="headLabel">
+            <h1>Youtube</h1>
+            <input type="search" id="searchbox" placeholder="type here ..">
+
+            <button id="btnclick" onclick="getSearchResults()">SEARCH</button>
+        </main>
+        <main id="content"></main>
+        <div id="navigation"> </div>
+    </template>
 
     <template id="videoHolder">
         <div class="thumbnails">
@@ -25,16 +36,7 @@
         <button id="prev" onclick="moveToPrev()">prev</button>
     </template>
 
-    <main class="headLabel">
-        <h1>Youtube</h1>
-        <input type="search" id="searchbox" placeholder="type here ..">
 
-        <button id="btnclick" onclick="requestPreparation()">SUBMIT</button>
-    </main>
-    <main id="content"></main>
-    <div id="navigation">
-
-    </div>
 </body>
 
 
