@@ -25,18 +25,28 @@ h1{
 #content{
     display: flex;
     flex-direction: row;
-    word-wrap: break-word;
-    border: white;
+    margin: 10px;
 }
 .thumbnails{
-    margin: 10px; 
+    width: 50%;
+    box-shadow: 1px 5px 8px bisque;
+    word-wrap: break-word;
 }
 #navigation{
     display: flex;
-    flex-direction: row;
-    width: 5rem;
-    height: 30px;
-    margin: 0 auto;
-
+    height: 30px; 
+     margin: 0 auto;
 }
-
+#next{
+    margin: 0 auto;
+    margin-right: 20px;
+    width: 8rem;
+}
+#prev{
+    margin: 0 auto;
+    margin-left: 20px;
+    width: 8rem;
+}
+img{
+    width: 90%;
+}

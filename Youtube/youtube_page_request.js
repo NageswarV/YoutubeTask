@@ -1,17 +1,23 @@
-function getPage(pageTokenValue) {
-    var request = gapi.client.youtube.search.list({
-        part: "snippet",
-        type: "video",
-        q: document.querySelector('#searchbox').value,
-        maxResults: 11,
-        order: "viewCount",
-        pageToken: pageTokenValue
-    });
-    request.execute(function (response) {
-        results = response.result;
-        nextPage = results.nextPageToken;
-        items = results.items;
-        prevPage = results.prevPageToken;
-    });
 
+function getPage(pageTokenValue) {
+    let url;
+    let searchValue = document.querySelector('#searchbox').value;
+    if (pageTokenValue) {
+        url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyD0aqzWTTE7En24KSnEMAyv6Xd3N2ZNN3M&type=video&part=snippet&maxResults=15&q=${searchValue}&pageToken=${pageTokenValue}`
+    }
+    else {
+        url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyD0aqzWTTE7En24KSnEMAyv6Xd3N2ZNN3M&type=video&part=snippet&maxResults=15&q=${searchValue}`
+    }
+    fetch(url).then(function (response) {
+        return response.json();
+    })
+        .then(function (results) {
+            if (!pageTokenValue) {
+                updateResultSet(results);
+                createThumbnails();
+            }
+            else {
+                updateResultSet(results);
+            }
+        });
 }

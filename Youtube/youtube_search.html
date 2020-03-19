@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yotube</title>
     <link rel="stylesheet" href="youtube_search.css" type="text/css">
+    <script src="PopulateResult.js"></script>
     <script src="yotube_search.js"></script>
     <script src="page_navigation.js"></script>
     <script src="youtube_page_request.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </head>
 
-<body>
+<body onresize="upDateCapacity()">
     <template id='mainPage'>
         <main class="headLabel">
             <h1>Youtube</h1>
             <input type="search" id="searchbox" placeholder="type here ..">
 
-            <button id="btnclick" onclick="getSearchResults()">SEARCH</button>
+            <button id="btnclick" onclick="getPage()">SEARCH</button>
         </main>
         <main id="content"></main>
         <div id="navigation"> </div>
@@ -26,8 +27,9 @@
 
     <template id="videoHolder">
         <div class="thumbnails">
-            <img id="video">
-            <h2 id="title"></h2>
+            <img class="video" alt="img">
+            <h5 class="title"></h5>
+            <p class="publisher"></p>
         </div>
     </template>
 
