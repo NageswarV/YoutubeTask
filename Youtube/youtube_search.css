@@ -40,13 +40,18 @@ h1{
 #next{
     margin: 0 auto;
     margin-right: 20px;
-    width: 8rem;
+    width: 6rem;
 }
 #prev{
     margin: 0 auto;
     margin-left: 20px;
-    width: 8rem;
+    width: 6rem;
 }
 img{
     width: 90%;
+}
+#pageCount{
+    border: black solid;
+    width: 4rem;
+    margin: 0 auto;
 }

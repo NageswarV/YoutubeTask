@@ -1,9 +1,10 @@
-var currentPage = 0, items_count;
+var currentPage = 0, items_count, pageCount = 1;
 function moveToNext() {
     items_count = getItemsCount();
     currentPage++;
-    if (currentPage < Math.floor(items_count / capacity)) {
 
+    if (currentPage < Math.floor(items_count / capacity)) {
+        pageCount++;
         let index = currentPage * capacity;
         populate(index);
     } else {
@@ -14,12 +15,13 @@ function moveToNext() {
         }
 
     }
-
+    document.querySelector('#pageCount').innerHTML=pageCount;
 }
 
 function moveToPrev() {
     items_count = getItemsCount();
     if (currentPage > 0) {
+        pageCount--;
         let index = (currentPage - 1) * capacity;
         populate(index);
         currentPage--;
@@ -31,5 +33,5 @@ function moveToPrev() {
             moveToPrev();
         }
     }
-
+    document.querySelector('#pageCount').innerHTML=pageCount;
 }

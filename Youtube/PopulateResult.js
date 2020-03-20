@@ -1,5 +1,6 @@
 var items, nextPage, prevPage;
 function populate(index) {
+
     if (!index) { index = 0; }
     let imgContainer = 0;
     var video = document.querySelectorAll('.thumbnails');
@@ -17,5 +18,9 @@ function updateResultSet(results) {
     items = results.items;
 }
 function getItemsCount() {
-    return items.length;
+    if(items){
+    return items.length;}
+    else{
+        return undefined;
+    }
 }
