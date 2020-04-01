@@ -25,7 +25,7 @@ function createNavigation() {
     var templateNav = document.querySelector("#templateNav");
     var clonetemplate = document.importNode(templateNav.content, true);
     document.querySelector("#navigation").appendChild(clonetemplate);
-    document.querySelector('#pageCount').innerHTML='0';
+    document.querySelector('#pageCount').innerHTML='1';
 }
 function upDateCapacity() {
     if (window.innerWidth < 720) {

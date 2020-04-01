@@ -10,9 +10,11 @@ function getPage(pageTokenValue, callBack) {
         url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaUKAbaPsKxaZ8RAgrks4WdoR4Fv3bMQo&type=video&part=snippet&maxResults=16&q=${searchValue}`
     }
     fetch(url).then(function (response) {
+        
         return response.json();
     })
         .then(function (results) {
+            
             if (!pageTokenValue) {
                 updateResultSet(results);
                 createThumbnails();
