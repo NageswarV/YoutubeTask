@@ -17,9 +17,14 @@ it("should update items and pagetokens",function(){
 describe("testing getItemsCount",function(){
     beforeEach(function(){
         items=[1,2,3,4];
-    });
+    })
     it("should return items count",function(){
+        
         expect(getItemsCount()).toBe(4);
+    })
+    it("should return undefined",function(){
+        items=null;
+        expect(getItemsCount()).toBe(undefined);
     })
 });
 describe("testing getItems method",function(){

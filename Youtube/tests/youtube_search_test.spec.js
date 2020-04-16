@@ -13,12 +13,36 @@ describe("testing init method",function(){
         expect(document.querySelector('#header')).toBeDefined();
         expect(document.querySelector('#header').textContent).toEqual('testing output');
     })
+    afterEach(function(){
+        document.querySelector('body').innerHTML='';
+    })
 });
 describe("testing updateCapacity Method",function(){
     beforeEach(function(){
-        spyOn(window,'createThumbnails').and.callFake(function(){})
+        spyOn(window,'createThumbnails');
     })
     it("should update capacity and call createThumbnails",function(){
-        //need to create onWindowChange
+        upDateCapacity();
+        expect(createThumbnails).toHaveBeenCalled();
     })
-})
+});
+describe("testing createNavigation",function(){
+    beforeEach(function(){
+        var template = document.createElement('template');
+        template.setAttribute('id','templateNav');
+        var nav=document.createElement('div');
+        nav.setAttribute('id','navigation');
+        document.body.appendChild(nav);
+        var pagecount=document.createElement('div');
+        pagecount.setAttribute('id','pageCount');
+        template.appendChild(pagecount);
+        document.body.appendChild(template);
+    })
+    it("should render navigation ",function(){
+        createNavigation();
+        expect(document.querySelector('#pageCount').innerHTML).toEqual('1');
+    })
+    afterEach(function(){
+        document.body.innerHTML='';
+    })
+});

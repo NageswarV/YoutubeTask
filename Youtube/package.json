@@ -7,15 +7,13 @@
     "test": "tests"
   },
   "dependencies": {
-    "karma-coverage": "^2.0.1",
-    "karma-phantomjs2-launcher": "^0.5.0"
-  },
-  "devDependencies": {
-    "jasmine-core": "^3.5.0",
-    "karma": "^4.4.1",
     "karma-chrome-launcher": "^3.1.0",
-    "karma-jasmine": "^3.1.1"
+    "karma": "^4.4.1",
+    "karma-jasmine": "^3.1.1",
+    "karma-phantomjs2-launcher": "^0.5.0",
+    "karma-coverage": "^2.0.1"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

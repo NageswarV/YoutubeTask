@@ -1,7 +1,7 @@
 
 function populate(index) {
-    let items=getItems();
-    if (!index) { index = 0; }
+    let items = getItems();
+    index = index ? index : 0;
     let imgContainer = 0;
     var video = document.querySelectorAll('.thumbnails');
     for (let i = index; i < index + capacity && i < items.length; i++) {

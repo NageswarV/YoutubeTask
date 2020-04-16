@@ -10,6 +10,7 @@ describe("testing moveToNext method",function(){
     it("should call populate and getItemsCount",function(){
         
        spyOn(window,'getItemsCount').and.returnValue(9);
+       capacity=2;
         moveToNext();
         expect(populate).toHaveBeenCalled();
     });
