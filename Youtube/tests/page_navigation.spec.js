@@ -6,6 +6,7 @@ describe("testing moveToNext method",function(){
         var pageCountField=document.createElement('p');
         pageCountField.setAttribute('id','pageCount');
         document.querySelector('body').appendChild(pageCountField);
+        
     })
     it("should call populate and getItemsCount",function(){
         
@@ -20,6 +21,7 @@ describe("testing moveToNext method",function(){
         spyOn(window,'getPage').and.callFake(function(){
         })
         spyOn(window,'getItemsCount').and.returnValue(0);
+
     })
     it("should call getPage",function(){
         moveToNext();

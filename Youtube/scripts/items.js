@@ -5,11 +5,7 @@ function updateResultSet(results) {
     items = results.items;
 }
 function getItemsCount() {
-    if(items){
-    return items.length;}
-    else{
-        return undefined;
-    }
+   return items ? items.length : 0;
 }
 function getItems(){
     return items;

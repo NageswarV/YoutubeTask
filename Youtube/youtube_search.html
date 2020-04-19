@@ -15,13 +15,13 @@
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </head>
 
-<body onresize="upDateCapacity()">
+<body>
     <template id='mainPage'>
         <main class="headLabel">
             <h1>Youtube</h1>
             <input type="search" id="searchbox" placeholder="type here ..">
 
-            <button id="btnclick" onclick="getPage()">SEARCH</button>
+            <button id="btnclick">SEARCH</button>
         </main>
         <main id="content"></main>
         <div id="navigation"> </div>
@@ -36,8 +36,8 @@
     </template>
 
     <template id="templateNav">
-        <button id="next" onclick="moveToNext()">next</button>
-        <button id="prev" onclick="moveToPrev()">prev</button>
+        <button id="next">next</button>
+        <button id="prev">prev</button>
        <p> PageCount : </p><div id="pageCount" ></div>
     </template>
 
